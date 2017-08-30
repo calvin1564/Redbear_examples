@@ -1,0 +1,29 @@
+/*
+ * This is a simple blink example which turns off and on the onboard led 
+ * connected to digital Pin 7 (D7) on the Redbear, based on a user input
+ * to analog pin 0 (A0). 
+ */
+
+//SYSTEM_THREAD(ENABLED);
+//BLE_SETUP(DISABLED);
+//SYSTEM_MODE(MANUAL);
+
+int led1 = D7;
+int usr_input = A0;
+int val;
+
+
+
+void setup() {
+  // Setup runs once. 
+  pinMode(led1, OUTPUT);
+}
+
+void loop() {
+  // Loop code runs repeatedly.
+
+  val = analogRead(usr_input);
+  if (val<2000) digitalWrite(led1, HIGH);
+  else digitalWrite(led1,LOW);
+  
+}
